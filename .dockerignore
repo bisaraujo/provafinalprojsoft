@@ -1,0 +1,8 @@
+target/classes/
+target/test-classes/
+target/site/
+target/surefire-reports/
+.idea/
+.git/
+data/
+frontend/
