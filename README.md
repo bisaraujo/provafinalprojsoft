@@ -41,8 +41,16 @@ Crie uma API no Auth0 e informe o Identifier como audience. Depois execute:
 
 ```powershell
 ./scripts/run-auth0.ps1 `
-  -IssuerUri "https://SEU-DOMINIO.us.auth0.com/" `
+  -IssuerUri "https://dev-kcwjkqlrx2lj73ae.us.auth0.com/" `
   -Audience "https://provafinal-api"
+```
+
+Configuracao publica preparada para o futuro front-end:
+
+```text
+Domain: dev-kcwjkqlrx2lj73ae.us.auth0.com
+Client ID: 7HTiixp3WpbYvQeIVveF4fw99Te93Uay
+Audience: https://provafinal-api
 ```
 
 A Action de Post Login esta em `auth0/post-login-action.js`. Ela adiciona email e roles ao access token. O claim de roles usado pelo back-end e `https://projsoft.com/roles` e pode ser trocado pela variavel `AUTH0_ROLES_CLAIM`.
