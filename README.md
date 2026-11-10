@@ -80,7 +80,7 @@ Essa imagem usa H2 por padrao e nao precisa do PostgreSQL para subir.
 ## GitHub Actions
 
 - `ci.yml`: executa Maven, testes e JaCoCo em push e pull request.
-- `deploy.yml`: publica a imagem no Docker Hub e atualiza a EC2, mas somente por acionamento manual.
+- `deploy.yml`: por acionamento manual, publica a imagem no Docker Hub. A EC2 so e atualizada quando a opcao `deploy_to_aws` for marcada explicitamente.
 
 O deploy deve permanecer manual ate a VM estar preparada. Para o modo mais resiliente, deixe a variavel `SPRING_PROFILES_ACTIVE` vazia: a EC2 usara H2 persistido em volume. Para o modo completo, use `auth0,postgres` e cadastre os secrets documentados no workflow.
 

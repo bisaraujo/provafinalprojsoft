@@ -3,6 +3,12 @@ name: Deploy manual - Docker Hub e AWS
 # Manual de proposito: nada sera publicado na VM durante a preparacao.
 on:
   workflow_dispatch:
+    inputs:
+      deploy_to_aws:
+        description: "Depois de publicar a imagem, atualizar tambem a EC2"
+        required: true
+        default: false
+        type: boolean
 
 env:
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/provafinal
@@ -54,6 +60,7 @@ jobs:
 
   deploy:
     needs: build-and-push
+    if: ${{ inputs.deploy_to_aws }}
     runs-on: ubuntu-latest
 
     steps:
